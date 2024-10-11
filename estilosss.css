@@ -1,0 +1,241 @@
+/* Estilos base */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Hind+Siliguri:wght@300;400;500;600;700&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hind Siliguri", sans-serif;
+
+  color: #636363; /* Texto oscuro */
+  text-align: center;
+  background-color: #f8f8f8; /* Fondo gris suave */
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+
+  
+}
+
+
+h3 span {
+  color: #ff6600;
+}
+
+label span {
+  color: #ff6600;
+}
+
+
+/* Contenedor principal */
+.content {
+  text-align: center;
+  margin: 0 auto;
+
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 30px; /* Bordes redondeados */
+  max-width: 100%;
+
+  font-size: 16px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 1000;
+  font-size: 35px;
+  margin: 20px 0;
+  color: #ff6600; /* Color naranja */
+}
+
+.beta{
+  font-family: "Bebas Neue", sans-serif;
+  background: #f76b2a;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 0 16px;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+
+}
+
+/* Contenedores individuales */
+.container2 {
+  width: 650px;
+  max-width: 650px; /* Ancho máximo para evitar que se vuelva demasiado ancho */
+  margin: 10px;
+  border-radius: 10px;
+  padding: 20px;
+
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Hind Siliguri", sans-serif;
+
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 10px 0; /* Espacio entre los contenedores */
+  border: 2px solid #353535;
+}
+
+.drop-area {
+  width: 650px;
+  max-width: 650px;
+  text-align: center;
+  flex: 1;
+  background-color: #ffecdf;
+  margin: 10px; /* Espacio entre los contenedores */
+  border: 2px dashed #ff6600;
+  box-sizing: border-box; /* El borde se incluye en el ancho y alto del contenedor */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: all .1s ease-in;
+}
+
+.drop-area:hover{
+  scale: 0.95;
+  opacity: 1;
+  border-color: #ffecdf; /* Adjust to your desired color */
+  box-shadow: 0 0 15px -2px #ff6600;
+}
+
+
+
+.container2 {
+  padding: 10px 20px;
+  background-color: #f8f8f8; /* Fondo gris suave */
+  overflow-y: auto;
+}
+
+.letras {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Hind Siliguri", sans-serif;
+
+  padding: 10px 20px;
+  color: rgb(109, 109, 109);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+
+.file-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn_delete{
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+button.btn_delete svg {
+  stroke: #242424;
+  transition: stroke 0.3s ease;
+}
+
+button.btn_delete svg:hover {
+  stroke: #ff6600;
+}
+
+.archivos_subidos{
+  display: flex;
+  justify-content: space-between;
+  background: #e4e4e4;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.archivos_subidos a {
+  color: #333; /* Cambia este color según tus necesidades */
+  text-decoration: none; /* Elimina el subrayado */
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilo para los enlaces al pasar el ratón por encima */
+.archivos_subidos a:hover {
+  color: #ff6600; /* Cambia este color según tus necesidades */
+}  
+
+.cont svg {
+  margin-right: 10px;
+  stroke: #333;
+  transition: stroke 0.3s ease;
+  cursor: pointer;
+}
+  
+.cont svg:hover {
+  stroke: #ff6600;
+}
+
+.archivos_subidos:hover {
+  box-shadow: 0 0 10px -2px #ff7300;
+  background: #ffecdf;
+}
+
+.archivos_subidos div {
+  overflow: hidden;
+}
+
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .drop-area,
+  .container2 {
+    width: 90%; /* Reducir el ancho en pantallas más pequeñas */
+    max-width: none; /* Restablecer el ancho máximo */
+  }
+}

@@ -3,13 +3,13 @@ const urlActual = window.location.href;
 
 // Verifica si el parámetro 'nombre' ya está presente en la URL
 const parametros = new URLSearchParams(window.location.search);
-let carpetaNombre = parametros.get("nombre");
+let carpetaNombre = parametros.get("id");
 
 if (!carpetaNombre) {
     // Si 'nombre' no está presente, genera un número aleatorio
     carpetaNombre = generarCadenaAleatoria();
     // Agrega el parámetro 'nombre' a la URL
-    const urlConParametro = urlActual.includes("?") ? `${urlActual}&nombre=${carpetaNombre}` : `${urlActual}?nombre=${carpetaNombre}`;
+    const urlConParametro = urlActual.includes("?") ? `${urlActual}&id=${carpetaNombre}` : `${urlActual}?id=${carpetaNombre}`;
     // Redirige a la nueva URL con el parámetro 'nombre'
     window.location.href = urlConParametro;
 } else {
@@ -17,7 +17,7 @@ if (!carpetaNombre) {
     crearCarpeta(carpetaNombre);
 }
 
-// Función para generar una cadena aleatoria
+// Función para generar una cadena aleatoria de 3 caracteres
 function generarCadenaAleatoria() {
     const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
     let cadenaAleatoria = '';
@@ -68,62 +68,6 @@ function generarCadenaAleatoria() {
     return cadenaAleatoria;
 }
 
-
-// //BARRA DE PROGRESO 
-// function uploadFile(carpetaRuta, inputId) {
-//   var archivoInput = document.getElementById(inputId);
-//   var archivo = archivoInput.files[0];
-//   var progressBar = document.getElementById('progressBar');
-
-//   var formData = new FormData();
-//   formData.append('archivo', archivo);
-
-//   var xhr = new XMLHttpRequest();
-
-//   xhr.upload.onprogress = function (event) {
-//       if (event.lengthComputable) {
-//           var percentComplete = (event.loaded / event.total) * 100;
-//           progressBar.value = percentComplete;
-//       }
-//   };
-
-//   xhr.onload = function () {
-//       if (xhr.status === 200) {
-//           console.log('Archivo subido con éxito');
-//           // Puedes realizar acciones adicionales después de la carga aquí
-//       } else {
-//           console.error('Error al subir el archivo');
-//       }
-//   };
-
-//   xhr.open('POST', 'upload.php', true);
-//   xhr.send(formData);
-// }
-
-
-//DROP AREA
-
-// Obtén la zona de arrastre y el formulario
-const dropArea = document.getElementById('drop-area');
-const Form = document.getElementById('form');
-
-// Agrega los siguientes eventos a la zona de arrastre
-dropArea.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropArea.classList.add('drag-over');
-});
-
-dropArea.addEventListener('dragleave', () => {
-    dropArea.classList.remove('drag-over');
-});
-
-dropArea.addEventListener('drop', (e) => {
-    e.preventDefault();
-    dropArea.classList.remove('drag-over');
-    const file = e.dataTransfer.files[0];
-    handleFile(file);
-});
-
 // Función para manejar el archivo seleccionado
 function handleFile(file) {
     if (file) {
@@ -148,4 +92,25 @@ Form.addEventListener('submit', (e) => {
     }
 });
 
-//progres bar 
+//DROP AREA
+
+// Obtén la zona de arrastre y el formulario
+const dropArea = document.getElementById('drop-area');
+const Form = document.getElementById('form');
+
+// Agrega los siguientes eventos a la zona de arrastre
+dropArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropArea.classList.add('drag-over');
+});
+
+dropArea.addEventListener('dragleave', () => {
+    dropArea.classList.remove('drag-over');
+});
+
+dropArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropArea.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    handleFile(file);
+});
